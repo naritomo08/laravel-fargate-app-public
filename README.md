@@ -171,7 +171,7 @@ PROD_AWS_ACCESS_KEY_ID
 →控えたアクセスキーを入れる。
 PROD_AWS_SECRET_ACCESS_KEY
 →控えたシークレットアクセスキーを入れる。
-PROD_AWS_ASSUME_ACCESS_KEY
+PROD_AWS_ASSUME_ROLE_ARN
 →arn:aws:iam::[AWSアカウントID]:role/example-prod-foobar-deployer
 ```
 #### SystemsManagerでのLaravel APP_KEY登録
@@ -443,7 +443,7 @@ GitHubリポジトリページに入り、Settings→secrets→Actionより、
 名前:
 PROD_AWS_ACCESS_KEY_ID
 PROD_AWS_SECRET_ACCESS_KEY
-PROD_AWS_ASSUME_ACCESS_KEY
+PROD_AWS_ASSUME_ROLE_ARN
 ```
 ### SystemsManagerでのLaravel APP_KEY/DB_PASS削除
 
