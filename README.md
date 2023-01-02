@@ -166,7 +166,7 @@ vi deploy.yml
 on:
   push:
     branches:
-      - main ←コメントアウトを外す。
+      - main ←追記する。
 
 run: aws s3 cp .env.$ENV_NAME s3://terraform-state-$SYSTEM_NAME-$ENV_NAME-$SERVICE_NAME-env-file/$IMAGE_TAG/.env
 →"terraform-state"のS3バケット名を編集する。
@@ -418,7 +418,7 @@ on:
   push:
     branches:
       - main
-      - sitetest #追記
+      - sitetest ←追記する
 
   if: github.ref == 'refs/heads/prod'
   if: github.ref == 'refs/heads/sitetest'
@@ -446,8 +446,10 @@ vi deploy.yml
 on:
   push:
     branches:
-      # - main ←コメントアウトする。
+      - main ←削除する
 ```
+
+コミット・デプロイを実施してActionが稼働しないことを確認する。
 
 ### docker環境の削除を実施する。
 
