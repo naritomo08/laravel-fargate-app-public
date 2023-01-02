@@ -154,7 +154,7 @@ APP_URL=https://<外向けドメイン名>
 
 ### デプロイ設定実施
 
-デプロイ設定ファイルを編集する。
+デプロイ実施ファイルを編集する。
 
 ```bash
 cd .github/workflows
@@ -167,6 +167,22 @@ on:
   push:
     branches:
       - main ←コメントアウトを外す。
+
+run: aws s3 cp .env.$ENV_NAME s3://terraform-state-$SYSTEM_NAME-$ENV_NAME-$SERVICE_NAME-env-file/$IMAGE_TAG/.env
+→"terraform-state"のS3バケット名を編集する。
+```
+
+デプロイ設定ファイルも更新する。
+
+```bash
+cd ../../ecspresso
+vi config_prod.yml
+```
+
+修正箇所
+```bash
+url: s3://terraform-state/example/prod/cicd/app_foobar_v1.0.0.tfstate
+→"terraform-state"のS3バケット名を編集する。
 ```
 
 ### GitHubへのAWS ID登録
