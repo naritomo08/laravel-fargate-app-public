@@ -158,16 +158,12 @@ APP_URL=https://<外向けドメイン名>
 
 ```bash
 cd .github/workflows
+mv deploy.yml.org deploy.yml
 vi deploy.yml
 ```
 
 修正箇所
 ```bash
-on:
-  push:
-    branches:
-      - main ←追記する。
-
 run: aws s3 cp .env.$ENV_NAME s3://terraform-state-$SYSTEM_NAME-$ENV_NAME-$SERVICE_NAME-env-file/$IMAGE_TAG/.env
 →"terraform-state"のS3バケット名を編集する。
 ```
@@ -438,15 +434,7 @@ https://<外向けドメイン名>
 
 ```bash
 cd .github/workflows
-vi deploy.yml
-```
-
-修正箇所
-```bash
-on:
-  push:
-    branches:
-      - main ←削除する
+mv deploy.yml deploy.yml.org
 ```
 
 コミット・デプロイを実施してActionが稼働しないことを確認する。
