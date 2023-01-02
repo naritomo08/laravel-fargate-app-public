@@ -129,6 +129,7 @@ githubでの新規リポジトリを作成していること。
 以下のコマンドを入力してソースをgithubに登録する。
 
 ```bash
+cd ..
 git init
 git add .
 git commit -m "first commit"
