@@ -7,4 +7,4 @@ timeout: "10m0s"
 plugins:
   - name: tfstate
     config:
-      url: s3://terraform-state-naritomo/example/prod/cicd/app_foobar_v1.0.0.tfstate
+      url: s3://terraform-state/example/prod/cicd/app_foobar_v1.0.0.tfstate
