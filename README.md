@@ -309,7 +309,7 @@ APP_NAME=foobar
 APP_ENV=production
 # APP_KEY=parameter_store
 APP_DEBUG=false
-APP_URL=https://naritomo.org
+APP_URL=https://<外向けドメイン名>←編集すること。
 
 LOG_CHANNEL=stderr
 LOG_LEVEL=debug
