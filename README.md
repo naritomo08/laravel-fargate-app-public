@@ -180,7 +180,7 @@ laravel-fargate-appフォルダで以下のコマンドで入力して出力結�
 
 ```bash
 docker-compose up -d
-docket-compose app php artisan key:generate --show
+docket-compose exec app php artisan key:generate --show
 →出てくるコマンド結果を全て控える
 ```
 
