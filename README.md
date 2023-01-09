@@ -36,7 +36,7 @@ mainブランチが更新されるとビルド/デプロイが動きます。
 #### cache container
 
 - Base image
-  - [dedis](https://hub.docker.com/_/redis):6.2.4-alpine
+  - [redis](https://hub.docker.com/_/redis):6.2.4-alpine
 
 ## 参照書籍/サイト
 
