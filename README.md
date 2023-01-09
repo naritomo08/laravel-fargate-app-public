@@ -128,9 +128,13 @@ githubでの新規リポジトリを作成していること。
 
 以下のコマンドを入力してソースをgithubに登録する。
 
+[name]は自身のユーザ名,[email]は自身のメールアドレスを入れる。
+
 ```bash
 cd ..
 git init
+git config --local user.name [name]
+git config --local user.email [email]
 git add .
 git commit -m "first commit"
 git branch -M main
