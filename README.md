@@ -188,6 +188,7 @@ url: s3://terraform-state/example/prod/cicd/app_foobar_v1.0.0.tfstate
 ### GitHubへのAWS ID登録
 
 作業実施する前に以下の値を控える。
+
 AWS IAMユーザ一覧から、example-prod-foobar-githubユーザの
 アクセスキーを新規作成し、
 アクセスキー/シークレットアクセスキーを控える。
@@ -225,8 +226,11 @@ AWS SystemsManagerに入り、パラメータストアにて
 ```
 
 利用枠は標準とする。
+
 タイプは安全な文字列とする。
+
 KMSキーソースは現在のアカウントとする。
+
 KMSキーIDは「alias/aws/ssm」とする。
 
 ### GitHubAction実施
