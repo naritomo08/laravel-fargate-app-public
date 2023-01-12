@@ -233,6 +233,15 @@ KMSキーソースは現在のアカウントとする。
 
 KMSキーIDは「alias/aws/ssm」とする。
 
+以下のコマンドでも登録が可能
+
+```bash
+aws ssm put-parameter \
+--name "/example/<環境名>/foobar/APP_KEY" \
+--type "SecureString" \
+--value "<前の手順で控えた結果>"
+```
+
 ### GitHubAction実施
 
 mainブランチへのコミット/プッシュを実施して、正常にGitHubActionが稼働することを確認する。
