@@ -118,6 +118,12 @@ npm ci
 npm run prod
 ```
 
+### DBマイグレート実施
+
+```bash
+docker-compose exec app php artisan migrate --force
+```
+
 ### ローカルでのサイト確認
 
 http://localhost
