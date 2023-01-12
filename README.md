@@ -237,7 +237,7 @@ KMSキーIDは「alias/aws/ssm」とする。
 
 ```bash
 aws ssm put-parameter \
---name "/example/<環境名>/foobar/APP_KEY" \
+--name "/example/prod/foobar/APP_KEY" \
 --type "SecureString" \
 --value "<前の手順で控えた結果>"
 ```
