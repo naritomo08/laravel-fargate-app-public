@@ -222,7 +222,7 @@ AWS SystemsManagerに入り、パラメータストアにて
 名前:
 /example/prod/foobar/APP_KEY
 値:
-先程控えた出力結果を控える。
+先程控えた出力結果。
 ```
 
 利用枠は標準とする。
