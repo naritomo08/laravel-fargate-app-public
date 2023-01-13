@@ -268,31 +268,6 @@ git push
 
 https://<外向けドメイン名>
 
-## ECSタスク数変更方法
-
-標準ではタスク数が1つしか立ち上がらないが、
-以下の方法で増やすことができる。
-
-```bash
-cd ecspresso
-vi ecs-service-def.json
-
-変更箇所:
-
-"capacityProviderStrategy": [
-    {
-      "base": 0,
-      "capacityProvider": "FARGATE_SPOT",
-      "weight": 1
-    }
-
-
-→"weight"の数字を変更する。
-```
-
-mainブランチにコミットしてタスクを更新後、
-ECSのタスク数が変更されることを確認する。
-
 ## 別ソースから本環境に入れてのECS立ち上げ
 
 今回の環境ではlaravel8で稼働することを確認しています。
