@@ -439,7 +439,7 @@ on:
       - main
       - sitetest ←追記する
 
-  if: github.ref == 'refs/heads/prod'
+  if: github.ref == 'refs/heads/main'
   if: github.ref == 'refs/heads/sitetest'
   →2箇所ある上記記載について、上から下に修正する。
 ```
