@@ -275,7 +275,7 @@ https://<外向けドメイン名>
 
 ```bash
 cd ecspresso
-vi ecs-task-def.json
+vi ecs-service-def.json
 
 変更箇所:
 
