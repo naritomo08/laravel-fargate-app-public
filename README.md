@@ -318,7 +318,7 @@ ecspresso deploy --config config_prod.yaml --tasks 2 --skip-task-definition
 
 ```bash
 cd ecspresso
-vi ecs-task-def.json
+vi ecs-service-def.json
 
 変更箇所:
 
