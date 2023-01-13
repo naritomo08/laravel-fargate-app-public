@@ -48,8 +48,6 @@ mainブランチが更新されるとビルド/デプロイが動きます。
 
 [nodejs、npm の最新版をインストールする（Ubuntu）](https://www.softel.co.jp/blogs/tech/archives/6487)
 
-[ecspresso利用方法解説](https://sfujiwara.hatenablog.com/entry/ecspresso-v2)
-
 [ECSインフラ構築](https://github.com/naritomo08/laravel-fargate-infra-public)
 
 ## 事前作業
@@ -67,11 +65,6 @@ aws
 
 npm
 
-brew
-*ecspressoインストール時に必要。
-
-ecspresso
-*インストールコマンド:brew install ecspresso@1.99
 ```
 
 ## 利用方法
@@ -275,66 +268,6 @@ git push
 ### ECSサイト確認
 
 https://<外向けドメイン名>
-
-## ECSタスク数変更方法
-
-標準ではタスク数が1つしか立ち上がらないが、
-以下の方法で増やすことができる。
-
-### ローカルecspresso設定前作業
-ローカルで実施する前に以下コマンドを実施する。(初回のみ)
-terraformによるECSサービス立ち上げ、
-GitHubActionによるタスク立ち上げ後に実施可能。
-
-```bash
-vi ~/.bash_profile
-
-以下を追記する。
-
-#ecspresso
-export VPC_CIDR=171.32.0.0/16
-export IMAGE_TAG=latest
-export AWS_REGION=ap-northeast-1
-export SYSTEM_NAME=example
-export ENV_NAME=prod
-export SERVICE_NAME=foobar
-
-source ~/.bash_profile
-export
-→変数が登録されていることを確認する。
-```
-
-### コマンドによるタスク追加
-
-```bash
-cd ecspresso
-ecspresso deploy --config config_prod.yaml --tasks 2 --skip-task-definition
-→数字を変更し、入力後タスクが増えることを確認する。
-```
-上記の作業をしても、自動デプロイをするともとに戻るため、
-恒久対応の場合以下を実施すること。
-
-### 設定ファイルによるタスク追加
-
-```bash
-cd ecspresso
-vi ecs-service-def.json
-
-変更箇所:
-
-"capacityProviderStrategy": [
-    {
-      "base": 0,
-      "capacityProvider": "FARGATE_SPOT",
-      "weight": 2
-    }
-
-
-→"weight"の数字を変更する。
-```
-
-mainブランチにコミットしてタスクを更新後、
-ECSのタスク数が変更されることを確認する。
 
 ## 別ソースから本環境に入れてのECS立ち上げ
 
