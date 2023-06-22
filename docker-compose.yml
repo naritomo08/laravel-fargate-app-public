@@ -74,7 +74,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${DB_PASS:-secret}
 
   cache:
-    image: redis:6.2.4-alpine
+    image: redis:latest
     volumes:
       - type: volume
         source: cache_volume
