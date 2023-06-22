@@ -2,6 +2,8 @@ version: "3.8"
 volumes:
   php-fpm-socket:
   db-store:
+  cache_volume:
+
 services:
   app:
     build:
@@ -73,6 +75,12 @@ services:
 
   cache:
     image: redis:6.2.4-alpine
+    volumes:
+      - type: volume
+        source: cache_volume
+        target: /data
+        volume:
+          nocopy: true
 
 networks:
   default:
