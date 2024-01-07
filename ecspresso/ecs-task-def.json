@@ -110,6 +110,18 @@
     {
       "host": {},
       "name": "php-fpm-socket"
+    },
+    {
+      "name": "efsvolume",
+      "efsVolumeConfiguration": {
+        "fileSystemId": "<efs_idの値>",
+        "rootDirectory": "/",
+        "transitEncryption": "ENABLED",
+        "authorizationConfig": {
+          "accessPointId": "<efs_point_idの値>",
+          "iam": "DISABLED"
+        }
+      }
     }
   ]
 }
