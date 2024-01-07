@@ -28,6 +28,11 @@
         {
           "containerPath": "/var/run/php-fpm",
           "sourceVolume": "php-fpm-socket"
+        },
+        {
+          "sourceVolume": "efsvolume",
+          "containerPath": "/work/backend/public/storage/images",
+          "readOnly": false
         }
       ],
       "name": "nginx",
@@ -65,6 +70,11 @@
         {
           "containerPath": "/var/run/php-fpm",
           "sourceVolume": "php-fpm-socket"
+        },
+        {
+          "sourceVolume": "efsvolume",
+          "containerPath": "/work/backend/storage/app/public/images",
+          "readOnly": false
         }
       ],
       "name": "php",
@@ -110,6 +120,18 @@
     {
       "host": {},
       "name": "php-fpm-socket"
+    },
+    {
+      "name": "efsvolume",
+      "efsVolumeConfiguration": {
+          "fileSystemId": "<efs_idの値>",
+          "rootDirectory": "/",
+          "transitEncryption": "ENABLED",
+          "authorizationConfig": {
+              "accessPointId": "<efs_point_idの値>",
+              "iam": "DISABLED"
+          }
+      }
     }
   ]
 }
