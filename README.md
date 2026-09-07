@@ -495,3 +495,7 @@ AWS SystemsManagerに入り、パラメータストアにて
 /example/prod/foobar/APP_KEY
 /example/prod/foobar/DB_PASS
 ```
+
+## 関連Qiita記事
+
+- [Terraformを使用してECS環境構築し、Laravelサイトを立ち上げてみた。](https://qiita.com/naritomo08/items/6e38955145d80c1435bd)
